@@ -1,0 +1,37 @@
+BetterSelect
+============
+
+This simple plugin provides some helpers for, guess what?, a better select control.  It can be used for any normal select drop down
+but has a specialized ability to produce a Time select field.  The time select will be a single drop down
+with values ranging from 12:00 AM to 12:00 PM to 11:45 PM in steps of 15.(TODO: make the interval configurable)
+
+Why is it better you ask?
+=========================
+It uses prototype/scriptaculous to replace the standard html select with a text input field, so 
+you have full control over the styling and functionality of the select.  Eventually, this
+will support autocomplete(TODO)
+
+
+Example
+=======
+
+1. include the js/stylesheets via helper
+  better_select_includes
+   
+    or individually
+  
+  better_select_javascript_include_tag
+  better_select_stylesheet_link_tag
+
+2. Use it
+  A. generic select
+    better_select_tag 'post[author]', options_for_select([["Me", 0],["You", 1])
+  B. Time select
+    better_time_select_tag 'post[published_at]', @post.published_at
+
+Credits
+=======
+Credits to Gabriel Lanzani (http://www.glanzani.com.ar)
+for the js/stylesheets and all around great guy
+
+Copyright (c) 2009 [Peter Philips], released under the MIT license
